@@ -1,0 +1,30 @@
+.nav {
+    background-color: transparent;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: white;
+    font-size:20px;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+    color:yellow;
+}
+
+.navbar-light .navbar-brand {
+    color: white;
+    font-size:20px;
+}
+
+.navbar-light .navbar-brand:hover{
+    color:yellow;
+}
+
+
+.cart-icon {
+    font-size:30px;
+}
+
+.cart-icon:hover {
+    color:yellow;
+}
