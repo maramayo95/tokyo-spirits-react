@@ -1,0 +1,15 @@
+.itemListContainer {
+    display:flex;
+    flex-direction: column;
+    
+    align-items: center;
+    height:100vh;
+    width: 100%;
+    
+}
+
+h2 {
+    margin-top: 20px;
+    color: white;
+
+}
