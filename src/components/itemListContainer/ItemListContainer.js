@@ -1,11 +1,27 @@
 import React from 'react'
 import '../itemListContainer/ItemListContainer.css'
+import Card from './card/Card'
 
-const itemListContainer = () => {
+const itemListContainer = ({greeting}) => {
     return (
-        <div class="itemListContainer">
-            <h2>En este  sitio encontrarás muchas películas y series de Anime...</h2>
+        <>
+        <div className="itemListContainer">
+            <h2>{greeting}</h2>
+        
+        <div className="cards">
+        <Card/>
+        <Card/>
+        <Card/>
+        <Card/>
         </div>
+
+
+        </div>
+        
+        
+        
+        
+        </>
     )
 }
 

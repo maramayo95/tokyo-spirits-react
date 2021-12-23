@@ -10,7 +10,7 @@ function App() {
   return (
     <>
     <Header />
-    <ItemListContainer />
+    <ItemListContainer greeting="En este  sitio encontrarás muchas películas y series de Anime..." />
     </>
   );
 }

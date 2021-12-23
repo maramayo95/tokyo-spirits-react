@@ -1,7 +1,6 @@
 .itemListContainer {
     display:flex;
     flex-direction: column;
-    
     align-items: center;
     height:100vh;
     width: 100%;
@@ -12,4 +11,11 @@ h2 {
     margin-top: 20px;
     color: white;
 
+}
+
+.cards {
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items:center;
 }
