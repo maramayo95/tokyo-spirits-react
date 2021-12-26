@@ -1,6 +1,6 @@
 import React from 'react'
 import '../itemListContainer/ItemListContainer.css'
-import Card from './card/Card'
+import ItemCount from './card/ItemCount'
 
 const itemListContainer = ({greeting}) => {
     return (
@@ -9,10 +9,8 @@ const itemListContainer = ({greeting}) => {
             <h2>{greeting}</h2>
         
         <div className="cards">
-        <Card/>
-        <Card/>
-        <Card/>
-        <Card/>
+        <ItemCount  max={10} min={1}/>
+        
         </div>
 
 
