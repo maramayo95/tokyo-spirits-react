@@ -1,6 +1,7 @@
 import React from 'react'
 import '../itemListContainer/ItemListContainer.css'
 import ItemCount from './card/ItemCount'
+import helpers from '../../helpers/mock'
 
 const itemListContainer = ({greeting}) => {
     return (
