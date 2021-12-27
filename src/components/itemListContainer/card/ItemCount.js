@@ -22,18 +22,26 @@ const ItemCount = ({min,max,nombre,precio,year,description}) => {
     
     return (
         <div className="producto">
-            <h4 className="name">{nombre}</h4>
-            <h5 className="price">{precio}</h5>
+            <h3 className="name">{nombre}</h3>
             <p className="description">{description}</p>
+            <p>Año {year}</p>
             <hr></hr>
-            <p>Precio: $ {precio}</p>
-            <p className="cantidad">Cantidad: {counter}</p>
-            <p className="stock">Stock {max}</p>
+            
+            <h4>Precio: $ {precio}</h4>
+            
+            <div className="stockCantidad">
+            <p>Cantidad: {counter}</p>
+            <p>Stock {max}</p>
+            </div>
+
             <div className="buttons">
             <button onClick ={onAdd}>+</button>
             <button  onClick ={resetear}>Reset</button>
             <button onClick ={onRest}>-</button>
-            
+            </div>
+                <hr></hr>
+            <div className="buy">
+            <button>Comprar</button>
             </div>
         </div>
     )

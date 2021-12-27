@@ -4,8 +4,8 @@
     background-image : url("../../img/background/anime-background-1.jpg") ;
     background-size: cover;
     background-repeat: no-repeat;
-    width:100%;
-    height: 90vh;
+    width:100vw;
+    height: 85vh;
     
     position:relative;
 
@@ -32,6 +32,12 @@
 .h1Index {
     color:white;
     font-size: 5rem;
+}
+
+h2{
+    margin: 10px;
+    text-align: center;
+    
 }
 
 .text-header {

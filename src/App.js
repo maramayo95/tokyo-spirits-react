@@ -9,8 +9,8 @@ import './App.css';
 function App() {
   return (
     <>
-    <Header />
-    <ItemListContainer greeting="En este  sitio encontrarás muchas películas y series de Anime..." />
+    <Header greeting="En este  sitio encontrarás muchas películas y series de Anime..." />
+    <ItemListContainer  />
     </>
   );
 }
