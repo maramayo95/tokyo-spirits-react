@@ -2,7 +2,7 @@ import React , {useState} from 'react';
 import './ItemCount.css'
 
 
-const ItemCount = ({min,max}) => {
+const ItemCount = ({min,max,nombre,precio,year,description}) => {
     
     const [counter, setCounter] =  useState(min);   
     
@@ -22,10 +22,11 @@ const ItemCount = ({min,max}) => {
     
     return (
         <div className="producto">
-            <h4 className="name">Nombre</h4>
-            <h5 className="price">Precio</h5>
-            <p className="description">Descripción</p>
+            <h4 className="name">{nombre}</h4>
+            <h5 className="price">{precio}</h5>
+            <p className="description">{description}</p>
             <hr></hr>
+            <p>Precio: $ {precio}</p>
             <p className="cantidad">Cantidad: {counter}</p>
             <p className="stock">Stock {max}</p>
             <div className="buttons">

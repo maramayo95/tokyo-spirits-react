@@ -1,7 +1,6 @@
-import React from 'react';
 
 const productos =[
-    {
+    {   id: 1,
         name : 'Blame',
         img : 'pronto aprenderé a como cargar una imagen', 
         year : '2017',
@@ -11,7 +10,7 @@ const productos =[
 
     } ,
 
-    {
+    {   id: 2,
         name : 'Devilman Cry-Baby',
         img : 'comming soon',
         year: '2018',
@@ -20,7 +19,7 @@ const productos =[
         genre: 'Supernatural',
     } ,
 
-    {
+    {   id: 3,
         name : 'Castelvania ',
         img : 'Comming Soon',
         year : 2021,
@@ -29,7 +28,7 @@ const productos =[
         genre : 'Terror',
     } ,
     
-    {
+    {   id: 4,
         name : 'Demon Slayer',
         img : 'Comming Soon',
         year: 2019,
@@ -37,7 +36,7 @@ const productos =[
         description: 'Es el período Taisho en Japón. Tanjiro, un niño de buen corazón que se gana la vida vendiendo carbón vegetal, encuentra a su familia asesinada por un demonio. Para empeorar las cosas, su hermana menor Nezuko, la única superviviente, se ha transformado ella misma en un demonio. Aunque devastado por esta triste realidad, Tanjiro decide convertirse en un "asesino de demonios" para poder convertir a su hermana en un humano y matar al demonio que masacró a su familia.',
     },
 
-    {
+    {   id: 5,
         name: 'My Hero Academia',
         img : 'Comming soon',
         year: 2019,
@@ -45,26 +44,25 @@ const productos =[
         description: '¿Cómo sería el mundo si el 80 por ciento de la población manifestara superpoderes extraordinarios llamados "Quirks" a los cuatro años? ¡Héroes y villanos estarían luchando por todas partes! Convertirse en un héroe significaría aprender a usar su poder, pero ¿adónde iría a estudiar? ¡El Programa Hero de UA High, por supuesto! Pero, ¿qué harías si fueras uno del 20 por ciento que nació sin Quirkless?.El estudiante de secundaria Izuku Midoriya quiere ser un héroe más que nada, pero no tiene ni una pizca de poder en él. Sin posibilidad alguna de entrar en la prestigiosa escuela secundaria UA para héroes en ciernes, su vida se parece cada vez más a un callejón sin salida. Luego, un encuentro con All Might, el héroe más grande de todos, le da la oportunidad de cambiar su destino ...'
     },
 
-    {
+    {   id: 6,
         name : 'Ni no Kuni',
         img: 'Comming Soon',
         year: 2018,
         price: 318,
         decription: 'Basado en la franquicia de videojuegos Ni no Kuni de Level-5. En la historia, Yuu es un estudiante de secundaria, su mejor amigo es Haru y su amiga de la infancia es Kotona. A través de cierto incidente, viajan de un lado a otro entre la realidad y Ni no Kuni. Cuando la vida de Kotona corre peligro, los tres deben tomar "la decisión final".',
     },
-
 ]
 
-console.log(productos)
 
-const mock = () => {
-    
-    
-    return (
-        <div>
-            
-        </div>
-    )
-}
 
-export default mock
+    export const getFetch = new Promise ((resolve,reject)=>{
+         let condition = true;
+         if(condition){
+             setTimeout(()=>{
+                 resolve(productos)
+             }, 3000)
+         } else {
+             reject('error')
+         }
+    })
+    

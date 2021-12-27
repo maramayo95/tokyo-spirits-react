@@ -2,10 +2,10 @@
  display:flex;
  flex-direction: column;
  justify-content: center;
- align-items: center;
+ align-self: flex-start;
  background-color: rgba(34, 34, 34, 0.349);
  padding:30px;
- min-width: 500px;
+ width: 500px;
  border-radius: 40px;
  margin : 20px;
  
