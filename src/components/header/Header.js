@@ -7,7 +7,6 @@ const Header = ({greeting}) => {
         <div>
             <div className="background-banner">
             <NavBar />
-            
             <div className="headerDiv">
             <h1 className="h1Index">Tokyo Spirits</h1>
             <h2>{greeting}</h2>
