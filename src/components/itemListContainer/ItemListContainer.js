@@ -1,8 +1,9 @@
 import {useState, useEffect} from 'react'
 import '../itemListContainer/ItemListContainer.css'
-import ItemCount from './card/ItemCount'
+import ItemCount from './Item/ItemCount/ItemCount'
 import {getFetch} from '../../helpers/mock'
 import Spiner from '../Spinner/Spinner'
+import ItemList from './ItemList/ItemList'
 const ItemListContainer = () => {
     const [productos, setProductos] = useState([])
     const [loading, setLoading] = useState(true)
@@ -18,11 +19,12 @@ const ItemListContainer = () => {
     
     return (
         <>
+        <ItemList />
         <div className="itemListContainer">
         <div className="cards">
         {
         loading ?  <Spiner/> :
-        productos.map(producto => <ItemCount max={10} min={1} key={producto.id} nombre={producto.name} precio={producto.price} year={producto.year} description={producto.description}/>)}
+        productos.map(producto => <Item max={10} min={1} key={producto.id} nombre={producto.name} precio={producto.price} year={producto.year} description={producto.description}/>)}
         </div>
         </div>
         </>
