@@ -22,7 +22,11 @@ const ItemCount = ({min,max}) => {
     
     return (
         <div className="producto">
-    
+            
+            <div className="stockCantidad">
+            <p>Cantidad: {counter}</p>
+            <p>Stock {max}</p>
+            </div>
 
             <div className="buttons">
             <button onClick ={onAdd}>+</button>

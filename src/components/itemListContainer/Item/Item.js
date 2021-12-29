@@ -1,22 +1,15 @@
 import React from 'react'
 import ItemCount from './ItemCount/ItemCount'
-
+import './Item.css'
 const Item = ({nombre,precio,year,description}) => {
     return (
-        <div>
+        <div className="itemContenedor">
             <h3 className="name">{nombre}</h3>
             <p className="description">{description}</p>
             <p>Año {year}</p>
             <hr></hr>
-            
             <h4>Precio: $ {precio}</h4>
-            
-            <div className="stockCantidad">
-            <p>Cantidad: {counter}</p>
-            <p>Stock {max}</p>
-            </div>
-
-            <ItemCount/>
+            <ItemCount max={10} min={1} />
         </div>
     )
 }
