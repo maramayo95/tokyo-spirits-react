@@ -11,6 +11,7 @@ const Item = ({nombre, img, precio,year,description}) => {
             <hr></hr>
             <h4>Precio: $ {precio}</h4>
             <ItemCount max={10} min={1} />
+            <button>Detalle del Producto</button>
         </div>
     )
 }

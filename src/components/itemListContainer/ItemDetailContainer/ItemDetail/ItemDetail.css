@@ -1,0 +1,11 @@
+.ItemDetail{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    border: 1px white solid;
+    width: 60%;
+    margin: 10%;
+    
+}

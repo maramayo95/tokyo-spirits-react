@@ -1,6 +1,6 @@
 
 const productos =[
-    {   id: 1,
+    {   id: '1',
         name : 'Blame',
         img : '/ecommerce/novedades/blame.jpg', 
         year : '2017',
@@ -10,7 +10,7 @@ const productos =[
 
     } ,
 
-    {   id: 2,
+    {   id: '2',
         name : 'Devilman Cry-Baby',
         img : '/ecommerce/novedades/devilmanCry.jpg',
         year: '2018',
@@ -19,7 +19,7 @@ const productos =[
         genre: 'Supernatural',
     } ,
 
-    {   id: 3,
+    {   id: '3',
         name : 'Castelvania ',
         img : '/ecommerce/novedades/castelvania.jpg',
         year : 2021,
@@ -28,7 +28,7 @@ const productos =[
         genre : 'Terror',
     } ,
     
-    {   id: 4,
+    {   id: '4',
         name : 'Demon Slayer',
         img : '/ecommerce/novedades/demon-slayer.jpg',
         year: 2019,
@@ -36,7 +36,7 @@ const productos =[
         description: 'Es el período Taisho en Japón. Tanjiro, un niño de buen corazón que se gana la vida vendiendo carbón vegetal, encuentra a su familia asesinada por un demonio. Para empeorar las cosas, su hermana menor Nezuko, la única superviviente, se ha transformado ella misma en un demonio. Aunque devastado por esta triste realidad, Tanjiro decide convertirse en un "asesino de demonios" para poder convertir a su hermana en un humano y matar al demonio que masacró a su familia.',
     },
 
-    {   id: 5,
+    {   id: '5',
         name: 'My Hero Academia',
         img : '/ecommerce/novedades/myHeroAcademia.jpg',
         year: 2019,
@@ -44,7 +44,7 @@ const productos =[
         description: '¿Cómo sería el mundo si el 80 por ciento de la población manifestara superpoderes extraordinarios llamados "Quirks" a los cuatro años? ¡Héroes y villanos estarían luchando por todas partes! Convertirse en un héroe significaría aprender a usar su poder, pero ¿adónde iría a estudiar? ¡El Programa Hero de UA High, por supuesto! Pero, ¿qué harías si fueras uno del 20 por ciento que nació sin Quirkless?.El estudiante de secundaria Izuku Midoriya quiere ser un héroe más que nada, pero no tiene ni una pizca de poder en él. Sin posibilidad alguna de entrar en la prestigiosa escuela secundaria UA para héroes en ciernes, su vida se parece cada vez más a un callejón sin salida. Luego, un encuentro con All Might, el héroe más grande de todos, le da la oportunidad de cambiar su destino ...'
     },
 
-    {   id: 6,
+    {   id: '6',
         name : 'Ni no Kuni',
         img: '/ecommerce/novedades/ni-no-kuni.jpg',
         year: 2018,
