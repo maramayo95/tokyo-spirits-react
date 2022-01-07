@@ -3,12 +3,12 @@ import React from 'react'
 import { Navbar, Nav, NavDropdown  } from 'react-bootstrap';
 import CartWidget from './CartWidget.js'
 import './NavBar.css'
-
-
+import {Link} from 'react-router-dom'
+ 
 const NavBar = () => {
     return (
       <Navbar bg="dark" variant ="dark" expand="lg">
-  <Navbar.Brand href="#home">Tokyo-Spirits</Navbar.Brand>
+  <Navbar.Brand to ="/">Tokyo-Spirits</Navbar.Brand>
   <Navbar.Toggle aria-controls="basic-navbar-nav" />
   <Navbar.Collapse id="basic-navbar-nav">
     <Nav className="mr-auto">
@@ -19,7 +19,7 @@ const NavBar = () => {
         <NavDropdown.Item href="#action/3.2">Novedades</NavDropdown.Item>
         <NavDropdown.Item href="#action/3.3">Clasicos</NavDropdown.Item>
       </NavDropdown>
-      <Nav.Link href="#link"><CartWidget /></Nav.Link>
+      <Nav.Link to ="/cart"><CartWidget /></Nav.Link>
     </Nav>
 
   </Navbar.Collapse>
