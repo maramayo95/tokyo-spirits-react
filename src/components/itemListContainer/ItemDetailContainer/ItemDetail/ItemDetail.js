@@ -1,8 +1,10 @@
 import React from 'react'
+
 import './ItemDetail.css'
 
 const ItemDetail = ({producto}) => {
   
+
     return (
         <div className="ItemDetail">
             <img src={producto.img} alt={producto.name}></img>

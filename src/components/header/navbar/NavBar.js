@@ -3,23 +3,36 @@ import React from 'react'
 import { Navbar, Nav, NavDropdown  } from 'react-bootstrap';
 import CartWidget from './CartWidget.js'
 import './NavBar.css'
-import {Link} from 'react-router-dom'
+
+import {LinkContainer} from 'react-router-bootstrap'
  
 const NavBar = () => {
     return (
       <Navbar bg="dark" variant ="dark" expand="lg">
-  <Navbar.Brand to ="/">Tokyo-Spirits</Navbar.Brand>
+  <LinkContainer to="/">
+    <Navbar.Brand >Tokyo-Spirits</Navbar.Brand>
+  </LinkContainer>
   <Navbar.Toggle aria-controls="basic-navbar-nav" />
   <Navbar.Collapse id="basic-navbar-nav">
     <Nav className="mr-auto">
-      <Nav.Link href="#home">Inicio</Nav.Link>
-      <Nav.Link href="#link">Sobre Nosotros</Nav.Link>
+
       <NavDropdown title="Anime" id="basic-nav-dropdown">
-        <NavDropdown.Item href="#action/3.1">Anime</NavDropdown.Item>
-        <NavDropdown.Item href="#action/3.2">Novedades</NavDropdown.Item>
-        <NavDropdown.Item href="#action/3.3">Clasicos</NavDropdown.Item>
+        
+        <LinkContainer to="categoria/anime">
+        <NavDropdown.Item>Anime</NavDropdown.Item>
+        </LinkContainer>
+        
+        <LinkContainer to="categoria/novedades">
+        <NavDropdown.Item>Novedades</NavDropdown.Item>
+        </LinkContainer>
+        
+        <LinkContainer to="categoria/clasicos">
+        <NavDropdown.Item>Clasicos</NavDropdown.Item>
+        </LinkContainer>
       </NavDropdown>
-      <Nav.Link to ="/cart"><CartWidget /></Nav.Link>
+      <LinkContainer to="/cart">
+      <Nav.Link><CartWidget /></Nav.Link>
+      </LinkContainer>
     </Nav>
 
   </Navbar.Collapse>

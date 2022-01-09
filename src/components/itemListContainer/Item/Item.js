@@ -1,17 +1,25 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 import ItemCount from './ItemCount/ItemCount'
 import './Item.css'
-const Item = ({nombre, img, precio,year,description}) => {
+
+const Item = ({id, nombre, img, precio}) => {
+    
     return (
-        <div className="itemContenedor">
+        <div id={id}  className="itemContenedor">
+            
             <img src={img} alt={nombre}></img>
             <h3 className="name">{nombre}</h3>
-            <p className="description">{description}</p>
-            <p>Año {year}</p>
             <hr></hr>
             <h4>Precio: $ {precio}</h4>
             <ItemCount max={10} min={1} />
+            
+            <Link to={`/detalle/${id}`}>
             <button>Detalle del Producto</button>
+            </Link>
+       
+       
+       
         </div>
     )
 }
