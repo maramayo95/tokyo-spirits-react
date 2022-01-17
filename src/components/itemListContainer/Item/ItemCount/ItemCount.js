@@ -2,14 +2,14 @@ import React , {useState} from 'react';
 import './ItemCount.css'
 
 
-const ItemCount = ({min,max}) => {
+const ItemCount = ({min, max, onAdd}) => {
 
     
     
     const [counter, setCounter] =  useState(min);   
     const [stock , setStock]  = useState(9);
     
-    const onAdd = () => {
+    const Add = () => {
         (counter < max) && setCounter(counter +1) ;
         (stock >= 1) && setStock(stock - 1);
 
@@ -35,13 +35,13 @@ const ItemCount = ({min,max}) => {
             </div>
 
             <div className="buttons">
-            <button onClick ={onAdd}>+</button>
+            <button onClick ={Add}>+</button>
             <button  onClick ={resetear}>Reset</button>
             <button onClick ={onRest}>-</button>
             </div>
                 <hr></hr>
             <div className="buy">
-            <button>Comprar</button>
+            <button onClick={()=> onAdd(counter)}>Agregar al Carrito</button>
             </div>
         </div>
     )

@@ -12,10 +12,12 @@ const Item = ({id, nombre, img, precio}) => {
             <h3 className="name">{nombre}</h3>
             <hr></hr>
             <h4>Precio: $ {precio}</h4>
-            <ItemCount max={10} min={1} />
             
+            <hr></hr>
             <Link to={`/detalle/${id}`}>
-            <button>Detalle del Producto</button>
+            <div className="div-btn-detalle">
+            <button className="btn-detalle">Detalle del Producto</button>
+            </div>        
             </Link>
        
        

@@ -28,3 +28,10 @@ h3{
 h4 {
     text-align:center;
 }
+
+.div-btn-detalle {
+    display:flex;
+    justify-content: center;
+    
+}
+

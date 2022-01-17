@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import {getFetch} from '../../../helpers/mock.js'
 import ItemDetail from './ItemDetail/ItemDetail.js'
 import './ItemDetailContainer.css'
+
 const ItemDetailContainer = () => {
     const [producto, setproducto] = useState({})
 
