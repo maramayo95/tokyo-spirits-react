@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState , useContext } from 'react'
 import { Link } from 'react-router-dom'
+import { CartContext } from '../../../../context/cartContext'
 import ItemCount from '../../Item/ItemCount/ItemCount'
 
 import './ItemDetail.css'
@@ -7,11 +8,18 @@ import './ItemDetail.css'
 const ItemDetail = ({producto}) => {
   
    const [show, setshow] = useState(true)
+   
+   const {cartList, agregarAlCarrito} = useContext(CartContext)
 
-   const onAdd = (counter) => {
-       setshow(false)
-       console.log(`Usted ha comprado ${counter} productos de ${producto.name}`)
-       alert(`Usted ha comprado ${counter} productos de ${producto.name}`)
+    console.log(cartList)
+
+   const onAdd = (cant) => {
+       console.log(cant)
+        agregarAlCarrito({...producto, cantidad:cant})
+
+        setshow(false)
+       //console.log(`Usted ha comprado ${counter} productos de ${producto.name}`)
+       //alert(`Usted ha comprado ${counter} productos de ${producto.name}`)
        
    } 
 
