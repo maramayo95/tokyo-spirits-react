@@ -31,9 +31,12 @@ import { Children, createContext, useContext, useState} from 'react'
     function vaciarCarrito(){
         setcartList([])
     }
-
+ 
     function removeItemCarrito(itemId){
+        
         setcartList(cartList.filter(item => item.id !== itemId))
+        console.log("Click")
+        
     }
     
     return (

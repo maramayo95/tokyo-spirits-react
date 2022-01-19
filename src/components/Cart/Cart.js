@@ -10,9 +10,11 @@ const Cart = () => {
         <h1>Odio el carrito</h1>
 
         {cartList.map(prod =>  
-            <div>
-             <li key={prod.id }>{prod.name} - cant: {prod.cantidad} <button key={prod.id} onClick={removeItemCarrito}>X</button></li>
-            </div>
+            (<div key={prod.id}>
+             <li className="listadoCarrito" key={prod.id}>{prod.name} - cant: {prod.cantidad} 
+             <button onClick={() => removeItemCarrito(prod.id)}>X</button>
+             </li>
+            </div>)
               ) }
               
         <button onClick={vaciarCarrito}>Vaciar Carrito</button>
