@@ -1,0 +1,9 @@
+li {
+    color: white;
+    list-style: none;
+    padding: 15px;
+}
+
+.contenedorCarrito:nth-child(odd) {
+    background-color: grey;
+}
