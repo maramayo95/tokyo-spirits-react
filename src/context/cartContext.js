@@ -1,19 +1,48 @@
-import { Children, createContext, useState} from 'react'
+import { Children, createContext, useContext, useState} from 'react'
 
- export const CartContext = createContext([])
+ const CartContext = createContext([])
+ 
+ export function useCartContext() {
+     return useContext(CartContext)
+ }
+
+ 
 
  export const CartContextProvider = ({children})  => {
      
     const [cartList, setcartList] = useState([])
 
-    function agregarAlCarrito(items) {
-        setcartList(...cartList ,items)
+    function agregarAlCarrito (items) {
+        
+        const indice=cartList.findIndex(i => i.id === items.id)
+       
+        if (indice > -1){
+            const cantidadVieja= cartList[indice].cantidad
+            let cantidadNueva= cantidadVieja + items.cantidad
+            cartList[indice].cantidad=cantidadNueva
+            let arrAux = [...cartList]
+            setcartList(arrAux)
+    
+        }else{
+            setcartList([...cartList, items])
+        }
     }
+
+    function vaciarCarrito(){
+        setcartList([])
+    }
+
+    function removeItemCarrito(itemId){
+        setcartList(cartList.filter(item => item.id !== itemId))
+    }
+    
     return (
         <CartContext.Provider value={
             {
                 cartList,
-                agregarAlCarrito
+                agregarAlCarrito,
+                vaciarCarrito,
+                removeItemCarrito
             } }>
             {children}
         </CartContext.Provider>

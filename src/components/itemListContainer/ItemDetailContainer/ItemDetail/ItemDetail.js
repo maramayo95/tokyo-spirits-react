@@ -1,15 +1,15 @@
 import React, { useState , useContext } from 'react'
 import { Link } from 'react-router-dom'
-import { CartContext } from '../../../../context/cartContext'
-import ItemCount from '../../Item/ItemCount/ItemCount'
+import {useCartContext} from '../../../../context/cartContext'
 
+import ItemCount from '../../Item/ItemCount/ItemCount'
 import './ItemDetail.css'
 
 const ItemDetail = ({producto}) => {
   
    const [show, setshow] = useState(true)
    
-   const {cartList, agregarAlCarrito} = useContext(CartContext)
+   const {cartList, agregarAlCarrito} = useCartContext()
 
     console.log(cartList)
 
@@ -30,6 +30,7 @@ const ItemDetail = ({producto}) => {
             <h4>{producto.year}</h4>
             <h4>{producto.price}</h4>
             <p>{producto.description}</p>
+            
 
        
         {show ? <ItemCount max={10} min={1} onAdd={onAdd} /> : 
