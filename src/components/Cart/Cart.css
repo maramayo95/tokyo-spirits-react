@@ -14,3 +14,13 @@ li {
     align-items: center;
     margin: 10px;  
 }
+
+.total {
+    display:flex;
+    flex-direction: row-reverse;
+}
+
+p{
+    color: #fff;
+    margin: 10px;
+}
