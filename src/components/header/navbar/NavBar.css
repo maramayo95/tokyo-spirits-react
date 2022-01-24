@@ -38,3 +38,15 @@ a.dropdown-item {
 a.navbar-brand {
     margin-left:10px;
 }
+
+.carritoSeccion {
+    display:flex;
+}
+
+.cantidadNav {
+    border-radius: 50%;
+    background-color: red;
+    height:15px;
+    width: 15px;
+    font-size: 10px;
+}

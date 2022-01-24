@@ -44,6 +44,12 @@ import { Children, createContext, useContext, useState} from 'react'
 
         return sumaTotal
     }
+
+    function mostrarCantidad () {
+        const mostrar = cartList.map( mostrar => mostrar.cantidad).reduce((prev,curr) => prev + curr,0)
+
+        return mostrar
+    }
     
     return (
         <CartContext.Provider value={
@@ -52,7 +58,8 @@ import { Children, createContext, useContext, useState} from 'react'
                 agregarAlCarrito,
                 vaciarCarrito,
                 removeItemCarrito,
-                total
+                mostrarCantidad,
+                total,
             } }>
             {children}
         </CartContext.Provider>

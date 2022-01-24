@@ -31,7 +31,9 @@ const NavBar = () => {
         </LinkContainer>
       </NavDropdown>
       <LinkContainer to="/cart">
+      
       <Nav.Link><CartWidget /></Nav.Link>
+
       </LinkContainer>
     </Nav>
 

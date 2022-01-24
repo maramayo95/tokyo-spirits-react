@@ -2,6 +2,7 @@ import React from 'react'
 import { useCartContext } from '../../context/cartContext'
 import './Cart.css'
 import CartEmpty from './CartEmpty/CartEmpty'
+import {Link} from 'react-router-dom'
 
 const Cart = () => {
     const {cartList , vaciarCarrito , removeItemCarrito, total} = useCartContext()
@@ -30,6 +31,8 @@ const Cart = () => {
                 ) }
         <div className="total">
         <button onClick={vaciarCarrito}>Vaciar Carrito</button>
+        
+        <button>Terminar Compra</button>
         
         <p>Total : ${total()}</p>
 

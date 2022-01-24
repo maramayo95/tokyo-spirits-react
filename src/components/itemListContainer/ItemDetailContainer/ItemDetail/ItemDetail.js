@@ -35,7 +35,7 @@ const ItemDetail = ({producto}) => {
        
         {show ? <ItemCount max={10} min={1} onAdd={onAdd} /> : 
         <div>
-             <Link  to="/cart"><button>Terminar la Compra</button></Link>
+             <Link  to="/cart"><button>Ir al Carrito</button></Link>
              <Link to="/"><button>Seguir Comprando</button></Link>
              </div> }
             
