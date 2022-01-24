@@ -1,6 +1,7 @@
 import React from 'react'
 import { useCartContext } from '../../context/cartContext'
 import './Cart.css'
+import CartEmpty from './CartEmpty/CartEmpty'
 
 const Cart = () => {
     const {cartList , vaciarCarrito , removeItemCarrito} = useCartContext()
@@ -9,7 +10,15 @@ const Cart = () => {
     
     return (
         <>
+        <div className="h1Cart">
         <h1>Tus Compras</h1>
+
+        </div>
+        
+        
+        {cartList.length > 0 ? 
+        
+        <div>
 
         {cartList.map(prod =>  
             (<div className="contenedorCarrito" key={prod.id}>
@@ -18,8 +27,15 @@ const Cart = () => {
              </li>
             </div>)
                 
-              ) }
+                ) }
         <button onClick={vaciarCarrito}>Vaciar Carrito</button>
+        
+        </div>
+        : 
+        
+        <CartEmpty />
+        }
+        
         </>
     
     )
