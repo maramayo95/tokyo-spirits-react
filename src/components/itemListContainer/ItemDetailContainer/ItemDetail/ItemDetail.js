@@ -24,24 +24,42 @@ const ItemDetail = ({producto}) => {
    } 
 
     return (
-        <div className="ItemDetail">
-            <img src={producto.img} alt={producto.name}></img>
-            <h3>{producto.name}</h3>
-            <h4>{producto.year}</h4>
-            <h4>{producto.price}</h4>
-            <p>{producto.description}</p>
-            
+    <>
 
-       
-        {show ? <ItemCount max={10} min={1} onAdd={onAdd} /> : 
-        <div>
-             <Link  to="/cart"><button>Ir al Carrito</button></Link>
-             <Link to="/"><button>Seguir Comprando</button></Link>
-             </div> }
-            
-       
-       
+
+        <div className="Item-Detail-Grid">
+            <div className="Img-Detail">
+            <img src={producto.img} alt={producto.name}></img>
+            </div>
+
+            <div className="Info-Detail">
+                <h4>Precio : $ {producto.price}</h4>
+            </div>
+
+            <div className="Description-Detail">
+                <div className="nombreYear">
+                <h3>{producto.name}</h3>
+                <h4>Año : {producto.year}</h4>
+
+                </div>
+
+
+                <p>{producto.description}</p>
+            </div>
+        
+        <div className="Contador-Detail">
+            {show ? <ItemCount max={10} min={1} onAdd={onAdd} /> : 
+            <div>
+                <Link  to="/cart"><button>Ir al Carrito</button></Link>
+                <Link to="/"><button>Seguir Comprando</button></Link>
+                </div> }
+                
+        
+        
+            </div>
         </div>
+                
+    </>
     )
 }
 

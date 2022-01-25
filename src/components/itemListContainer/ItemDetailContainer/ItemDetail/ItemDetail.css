@@ -1,12 +1,79 @@
-.ItemDetail{
+
+
+.Item-Detail-Grid {
+    display: grid;
+    grid-template-columns: 60% 30% ;
+    grid-template-rows: 300px 100px ;
+    grid-gap: 5px;
+    color: #fff;
+    margin-top: 50px;
+    padding: 30px;
+}
+
+.Img-Detail {
+    display:flex;
+    
+    
+    margin-left: 10px;
+    margin-bottom:10px;
+    border-radius: 30px;
+    
+}
+
+img {
+    height:300px;
+}
+
+.Info-Detail {
     display:flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 30px;
-    border: 1px white solid;
-    width: 60%;
-    margin: 10%;
-    color: white;
+}
+
+.Img-Detail {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.Contador-Detail {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.Description-Detail {
+    grid-row: 2;
+    grid-column: 1;
+    padding: 10px;
+}
+
+.Description-Detail .nombreYear {
+    display:flex;
+    flex-direction: column;
+}
+@media (max-width: 700px) {
+    .Item-Detail-Grid {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .Description-Detail {
+        word-wrap: break-word;
+        margin: none;
+        width: 80%;
+    }
+
+    .Description-Detail p {
+        padding: none;
+    }
+    img {
+        width: 200px;
+       
+    }
     
 }

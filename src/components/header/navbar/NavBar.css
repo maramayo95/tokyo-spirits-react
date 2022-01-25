@@ -1,6 +1,4 @@
-.nav.navbar.navbar-expand.navbar-dark.bg-dark {
-    background-color: transparent !important;
-}
+
 
 a.nav-link {
     text-align: center;
@@ -49,4 +47,12 @@ a.navbar-brand {
     height:15px;
     width: 15px;
     font-size: 10px;
+}
+
+@media screen and (max-width: 900px) {
+  
+    nav.navbar.navbar-expand-lg.navbar-dark.bg-dark {
+        display: flex;
+        flex-direction: column;
+    }
 }
