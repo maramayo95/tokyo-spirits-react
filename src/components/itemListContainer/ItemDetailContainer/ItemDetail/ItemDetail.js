@@ -33,13 +33,13 @@ const ItemDetail = ({producto}) => {
             </div>
 
             <div className="Info-Detail">
-                <h4>Precio : $ {producto.price}</h4>
             </div>
 
             <div className="Description-Detail">
                 <div className="nombreYear">
                 <h3>{producto.name}</h3>
                 <h4>Año : {producto.year}</h4>
+                <h4>Precio : $ {producto.price}</h4>
 
                 </div>
 
