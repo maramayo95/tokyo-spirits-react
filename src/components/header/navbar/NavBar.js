@@ -22,13 +22,27 @@ const NavBar = () => {
         <NavDropdown.Item>Anime</NavDropdown.Item>
         </LinkContainer>
         
-        <LinkContainer to="categoria/novedades">
-        <NavDropdown.Item>Novedades</NavDropdown.Item>
-        </LinkContainer>
-        
         <LinkContainer to="categoria/clasicos">
         <NavDropdown.Item>Clasicos</NavDropdown.Item>
         </LinkContainer>
+
+        <LinkContainer to="categoria/mechas">
+        <NavDropdown.Item>Mechas</NavDropdown.Item>
+        </LinkContainer>
+
+        <LinkContainer to="categoria/deportes">
+        <NavDropdown.Item>Deportes</NavDropdown.Item>
+        </LinkContainer>
+
+        <LinkContainer to="categoria/Norteamericanas">
+        <NavDropdown.Item>Norteamericanas</NavDropdown.Item>
+        </LinkContainer>
+        
+        <LinkContainer to="categoria/Romanticas">
+        <NavDropdown.Item>Romanticas</NavDropdown.Item>
+        </LinkContainer>
+
+
       </NavDropdown>
       <LinkContainer to="/cart">
       

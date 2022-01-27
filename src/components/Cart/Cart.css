@@ -24,3 +24,14 @@ p{
     color: #fff;
     margin: 10px;
 }
+
+.listaCarrito {
+    display:flex;
+    align-items: center;
+}
+
+.imgCarrito {
+    width:60px;
+    height:60px;
+    margin: 5px;
+}

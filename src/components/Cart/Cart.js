@@ -23,9 +23,13 @@ const Cart = () => {
 
         {cartList.map(prod =>  
             (<div className="contenedorCarrito" key={prod.id}>
-             <li className="listadoCarrito" key={prod.id}>{prod.name} - cant: {prod.cantidad} 
-             <button onClick={() => removeItemCarrito(prod.id)}>X</button>
-             </li>
+                <div className="listaCarrito">
+                <img className="imgCarrito" src={prod.img}/>
+                <li className="listadoCarrito" key={prod.id}>  {prod.name} - cant: {prod.cantidad} 
+                <button onClick={() => removeItemCarrito(prod.id)}>X</button>
+                </li>
+
+                </div>
             </div>)
                 
                 ) }

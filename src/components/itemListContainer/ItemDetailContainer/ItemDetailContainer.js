@@ -1,4 +1,4 @@
-import { doc, getFirestore } from 'firebase/firestore'
+import { doc, getDoc, getFirestore } from 'firebase/firestore'
 import React , {useEffect, useState} from 'react'
 import { useParams } from 'react-router-dom'
 import {getFetch} from '../../../helpers/mock.js'
@@ -13,8 +13,9 @@ const ItemDetailContainer = () => {
         
         const db = getFirestore()
         const queryProd = doc(db, 'items', detalleId)
-      
-    }, [])
+        getDoc(queryProd)
+        .then((resp)=>{setproducto({id: resp.id, ...resp.data()})})
+    }, [detalleId])
     
 
    
