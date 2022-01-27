@@ -26,7 +26,7 @@ const Cart = () => {
                 <div className="listaCarrito">
                 <img className="imgCarrito" src={prod.img}/>
                 <li className="listadoCarrito" key={prod.id}>  {prod.name} - U: {prod.cantidad} 
-                <button onClick={() => removeItemCarrito(prod.id)}>X</button>
+                <button className=" btn-danger" onClick={() => removeItemCarrito(prod.id)}>X</button>
                 </li>
 
                 </div>
@@ -34,13 +34,15 @@ const Cart = () => {
                 
                 ) }
        
+        <div className="totalPrice"> 
         <p>Total : ${total()}</p>
+        </div>
         
         <div className="total">
 
         <div className="botonesCarrito">
             <button onClick={vaciarCarrito}>Vaciar Carrito</button>
-        <button >Seguir Comprando</button>
+        <Link to="/"> <button >Seguir Comprando</button> </Link>
         <Link to="/checkout"><button>Ir al Checkout</button></Link>
         </div>
         

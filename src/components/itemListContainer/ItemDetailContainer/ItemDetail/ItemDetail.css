@@ -83,6 +83,15 @@ img {
         width: 80%;
        
     }
+
+    .buttonCenter button {
+        margin-bottom: 10px;
+        width: 70vw;
+    }
+
+    .buy button {
+        width: 70vw;
+    }
     
 }
 
