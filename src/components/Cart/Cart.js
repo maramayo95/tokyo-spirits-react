@@ -2,7 +2,6 @@ import React from 'react'
 import { useCartContext } from '../../context/cartContext'
 import './Cart.css'
 import CartEmpty from './CartEmpty/CartEmpty'
-import {Link} from 'react-router-dom'
 
 const Cart = () => {
     const {cartList , vaciarCarrito , removeItemCarrito, total} = useCartContext()
@@ -25,7 +24,7 @@ const Cart = () => {
             (<div className="contenedorCarrito" key={prod.id}>
                 <div className="listaCarrito">
                 <img className="imgCarrito" src={prod.img}/>
-                <li className="listadoCarrito" key={prod.id}>  {prod.name} - cant: {prod.cantidad} 
+                <li className="listadoCarrito" key={prod.id}>  {prod.name} - U: {prod.cantidad} 
                 <button onClick={() => removeItemCarrito(prod.id)}>X</button>
                 </li>
 
