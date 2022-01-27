@@ -8,10 +8,14 @@
  align-self: flex-start;
  background-color:  var(--background-color);
  padding:30px;
- max-width: 30%;
+ width:90%;
  border-radius: 40px;
  margin : 20px;
  color: #fff;
+}
+
+.imgCard {
+    width:100%;
 }
 
 .itemContenedor:hover{

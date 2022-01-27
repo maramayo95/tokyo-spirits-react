@@ -39,6 +39,7 @@ a.navbar-brand {
 
 .carritoSeccion {
     display:flex;
+    justify-content: center;
 }
 
 .cantidadNav {

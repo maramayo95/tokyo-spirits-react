@@ -8,12 +8,11 @@
     color: #fff;
     margin-top: 50px;
     padding: 30px;
+    
 }
 
 .Img-Detail {
     display:flex;
-    
-    
     margin-left: 10px;
     margin-bottom:10px;
     border-radius: 30px;
@@ -72,7 +71,10 @@ img {
     }
 
     .Description-Detail p {
-        padding: none;
+        padding: 10px;
+        background-color: rgba(24, 24, 24, 0.733);
+        border-radius:10px;
+        
     }
     img {
         width: 80%;
