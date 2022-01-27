@@ -4,7 +4,11 @@ import {getFetch} from '../../helpers/mock'
 import Spiner from '../Spinner/Spinner'
 import ItemList from './ItemList/ItemList'
 import { useParams } from 'react-router-dom'
+import { getFirestore, query, collection, getDocs  } from 'firebase/firestore'
+
+
 const ItemListContainer = () => {
+   
     const [productos, setProductos] = useState([])
     const [loading, setLoading] = useState(true)
     
@@ -14,21 +18,15 @@ const ItemListContainer = () => {
     // console.log(idCategoria)
     
     useEffect(() => {
-        if (idCategoria) {
-            getFetch
-            .then(resp => setProductos(resp.filter(prod => prod.categoria === idCategoria )))
-            .catch(err => console.log(err))
-            .finally(()=> setLoading(false) )
-            
-        } else {
-            getFetch
-            .then(resp => setProductos(resp))
-            .catch(err => console.log(err))
-            .finally(()=> setLoading(false) )
-        }
-        
+        const db = getFirestore()
+        const queryCollection = query(collection(db , 'items'))
+        getDocs(queryCollection)
+        .then(res => setProductos(res.docs.map(prod => ({ id: prod.id, ...prod.data()})) ))
+        .catch(err => err)
+        .finally(() => setLoading(false))
     }, [idCategoria])
-    
+
+    console.log(productos)
     
     
     return (
