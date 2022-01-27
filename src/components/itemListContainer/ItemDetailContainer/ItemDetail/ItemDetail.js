@@ -11,10 +11,10 @@ const ItemDetail = ({producto}) => {
    
    const {cartList, agregarAlCarrito} = useCartContext()
 
-    console.log(cartList)
+    //console.log(cartList)
 
    const onAdd = (cant) => {
-       console.log(cant)
+      //  console.log(cant)
         agregarAlCarrito({...producto, cantidad:cant})
 
         setshow(false)
@@ -22,6 +22,7 @@ const ItemDetail = ({producto}) => {
        //alert(`Usted ha comprado ${counter} productos de ${producto.name}`)
        
    } 
+
 
     return (
     <>
@@ -48,7 +49,15 @@ const ItemDetail = ({producto}) => {
             </div>
         
         <div className="Contador-Detail">
-            {show ? <ItemCount max={10} min={1} onAdd={onAdd} /> : 
+            {show ? 
+            <div> 
+                <ItemCount max={10} min={1} onAdd={onAdd} />
+                <div className="buttonCenter">
+                <Link to="/"><button>Volver Atras</button></Link>
+                </div>
+            </div>
+            
+            : 
             <div>
                 <Link  to="/cart"><button>Ir al Carrito</button></Link>
                 <Link to="/"><button>Seguir Comprando</button></Link>

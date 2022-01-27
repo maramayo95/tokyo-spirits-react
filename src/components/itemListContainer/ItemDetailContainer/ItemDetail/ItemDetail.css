@@ -12,6 +12,8 @@
   
 }
 
+
+
 .Img-Detail {
     display:flex;
     margin-left: 10px;
@@ -83,4 +85,15 @@ img {
     }
     
 }
+
+
+
+    .buttonCenter {
+        display:flex;
+        justify-content: center;
+
+    }
+
+
+
 
