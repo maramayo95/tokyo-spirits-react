@@ -16,7 +16,7 @@ const NavBar = () => {
   <Navbar.Collapse id="basic-navbar-nav">
     <Nav className="mr-auto">
 
-      <NavDropdown title="Anime" id="basic-nav-dropdown">
+      <NavDropdown title="Categorias" id="basic-nav-dropdown">
         
         <LinkContainer to="categoria/anime">
         <NavDropdown.Item>Anime</NavDropdown.Item>

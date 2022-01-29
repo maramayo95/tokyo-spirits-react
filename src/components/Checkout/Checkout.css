@@ -1,0 +1,43 @@
+.CheckoutOn {
+    margin-bottom: 10px;
+}
+
+.headerCheck {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.formGrid {
+    display:grid; 
+    grid-template-columns: 50% 50%;
+}
+
+.totalPriceCheckout {
+    display:flex;
+    flex-direction: row-reverse;
+}
+.formCheckout p {
+    text-align:center;
+    font-size: 20px;
+}
+
+
+@media (max-width: 800px) {
+    .formGrid {
+        display:flex;
+        flex-direction: column-reverse;
+    }
+
+    .abstractCard {
+        margin-bottom: 10px;
+    }
+
+    .btn-emptyChart {
+        width: 90vw;
+
+    }
+
+   
+}

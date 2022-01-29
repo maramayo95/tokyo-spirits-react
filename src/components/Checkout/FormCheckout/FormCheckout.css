@@ -1,0 +1,60 @@
+
+
+.formCheck {
+    display:flex;
+    flex-direction:column;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    width: 30vw;
+}
+
+.formCheck input  {
+    margin-bottom: 10px;
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid yellow;
+    color: white;
+}
+
+.formCheck ::placeholder {
+    color: white;
+}
+
+.formCheck textarea {
+    border: none;
+    background-color: transparent;
+    border:none;
+    border-bottom: 1px solid yellow;
+    color: white;
+
+}
+
+
+
+
+.formContainer {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@media (max-width:500px) {
+    .formContainer {
+        padding: 10px;
+    }
+    
+    .formCheck {
+      width:  90vw;
+    }
+
+    .formContainer button {
+        width: 90vw;
+    }
+
+    .formCheck button {
+        width: 70vw;
+    }
+
+}

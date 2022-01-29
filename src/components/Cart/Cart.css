@@ -4,6 +4,8 @@ li {
     padding: 15px;
 }
 
+
+
 .contenedorCarrito:nth-child(odd) {
     background-color: rgba(128, 128, 128, 0.753);
 }
