@@ -4,12 +4,20 @@ import { useCartContext } from '../../context/cartContext'
 import './Cart.css'
 import CartEmpty from './CartEmpty/CartEmpty'
 import CartListDetail from './CartListDetail/CartListDetail'
+import { getFirestore, query, collection, getDocs , where, addDoc, documentId, writeBatch } from 'firebase/firestore'
 
 const Cart = () => {
     const {cartList , vaciarCarrito , total} = useCartContext()
 
+    //guardar la orden en firestore
     
-    
+    // checkout()
+
+    //actualizar stock
+       
+
+
+
     return (
         <>
         <div  className="contenedor">
