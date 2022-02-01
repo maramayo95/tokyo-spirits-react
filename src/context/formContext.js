@@ -49,7 +49,7 @@ export const FormContextProvider = ({children}) => {
         addDoc(orderCollection,order)
          .then(resp => { setdataId(resp.id)})
         .catch(err => err)
-        .finally(() => console.log(dataId))
+        .finally(() => dataId)
         
         fRefreshStock();
     }
