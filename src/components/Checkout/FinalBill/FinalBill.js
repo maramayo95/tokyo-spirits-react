@@ -24,9 +24,13 @@ const FinalBill = () => {
               <CartListDetailWithoutX/>
             </section>
         
-        <Link to="/">
-        <button>Volver al Inicio</button>
-        </Link>
+        <div className="btn-form">
+          <Link to="/">
+          <button>Volver al Inicio</button>
+          </Link>
+        </div>
+
+
         </div>
 
       

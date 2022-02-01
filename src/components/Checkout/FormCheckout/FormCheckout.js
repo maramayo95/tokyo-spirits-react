@@ -18,7 +18,7 @@ const FormCheckout = () => {
                 <textarea type="text" name="comment" placeholder='Dejanos un comentario' onChange={handleChange} value={dataForm.comment}/>
              
                 <Link to="/finalBill">
-                 <button>Confirmar Compra </button>
+                 <button type="submit">Confirmar Compra </button>
                 </Link>
               
               </form>
