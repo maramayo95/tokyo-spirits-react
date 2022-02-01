@@ -1,4 +1,6 @@
 import { Children, createContext, useContext, useState} from 'react'
+// import { getFirestore, query, collection, getDocs , where, addDoc, documentId, writeBatch } from 'firebase/firestore'
+
 
  const CartContext = createContext([])
  
@@ -51,6 +53,7 @@ import { Children, createContext, useContext, useState} from 'react'
         return mostrar
     }
     
+    
     return (
         <CartContext.Provider value={
             {
@@ -60,6 +63,7 @@ import { Children, createContext, useContext, useState} from 'react'
                 removeItemCarrito,
                 mostrarCantidad,
                 total,
+                
             } }>
             {children}
         </CartContext.Provider>
