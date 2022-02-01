@@ -6,7 +6,7 @@ import { useCartContext } from './cartContext';
 const FormContext = createContext([])
 
 export function useFormContext() {
-    return useContext(useFormContext)
+    return useContext(FormContext)
 }
 
 
@@ -87,7 +87,7 @@ export const FormContextProvider = ({children}) => {
 
     
     return (
-        <FormContext.Provider value= {
+        <FormContext.Provider value={
             {
                 dataForm,
                 dataId,

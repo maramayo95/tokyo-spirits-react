@@ -21,7 +21,7 @@ const FormCheckout = () => {
               </form>
 
                 <Link to="/finalBill">
-                 <button onClick={checkout}>Confirmar Compra </button>
+                 <button>Confirmar Compra </button>
                 </Link>
                 
         </div>
