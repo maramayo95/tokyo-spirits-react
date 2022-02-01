@@ -28,7 +28,7 @@ export const FormContextProvider = ({children}) => {
       const [dataId, setdataId] = useState('');
 
     
-    const checkout = async (e) => {
+    const checkout =  (e) => {
         
         e.preventDefault()
         let order = {}
@@ -45,14 +45,13 @@ export const FormContextProvider = ({children}) => {
         } )
     
         const db = getFirestore()
-        const orderCollection = collection(db, 'orders',  )
-        await addDoc(orderCollection,order)
-        .then(resp => setdataId(resp.id))
+        const orderCollection = collection(db, 'orders' )
+        addDoc(orderCollection,order)
+         .then(resp => { setdataId(resp.id)})
         .catch(err => err)
-        .finally(() => console.log("Compra realizada"))
+        .finally(() => console.log(dataId))
         
         fRefreshStock();
-    
     }
       
     const fRefreshStock = async () => {
@@ -75,6 +74,8 @@ export const FormContextProvider = ({children}) => {
     
     
     }    
+
+    
     
     function handleChange(e) {
       setdataForm({

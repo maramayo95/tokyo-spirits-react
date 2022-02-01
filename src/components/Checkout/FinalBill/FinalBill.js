@@ -1,14 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useCartContext } from '../../../context/cartContext';
 import { useFormContext } from '../../../context/formContext';
 import CartListDetailWithoutX from '../../Cart/CartListDetailWithoutX/CartListDetailWithoutX';
 import './FinalBill.css'
 const FinalBill = () => {
-    
-    const {dataForm, dataId} = useFormContext()
+    const {vaciarCarrito} = useCartContext()    
+    const {dataForm, dataId } = useFormContext()
   return (
   <div>
-            <h1 className="container">Resumen de tu Compra</h1>
+            <h1>Su compra ha sido realizada con éxito</h1>
+            <h2 className="container">Resumen de tu Compra</h2>
             
       <div className="container bill-container">
             <section className="data-user">
@@ -26,7 +28,7 @@ const FinalBill = () => {
         
         <div className="btn-form">
           <Link to="/">
-          <button>Volver al Inicio</button>
+          <button onClick={vaciarCarrito}>Volver al Inicio</button>
           </Link>
         </div>
 
