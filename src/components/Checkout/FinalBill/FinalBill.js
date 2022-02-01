@@ -6,14 +6,13 @@ import './FinalBill.css'
 const FinalBill = () => {
     
     const {dataForm, dataId} = useFormContext()
-
   return (
   <div>
             <h1 className="container">Resumen de tu Compra</h1>
             
       <div className="container bill-container">
             <section className="data-user">
-              <h2 className="idBill">Id de la compra {dataId}</h2>
+              <p className="idBill">Id de la compra {dataId}</p>
                 <p>Nombre : {dataForm.name} </p>
                 <p>Apellido: {dataForm.subname} </p>
                 <p>Email: {dataForm.email} </p>

@@ -17,12 +17,12 @@ const FormCheckout = () => {
                 <input type="number" name="phone" placeholder='Confirmar Telefono' onChange={handleChange} value={dataForm.phone}/>
                 <textarea type="text" name="comment" placeholder='Dejanos un comentario' onChange={handleChange} value={dataForm.comment}/>
              
-              
-              </form>
-
                 <Link to="/finalBill">
                  <button>Confirmar Compra </button>
                 </Link>
+              
+              </form>
+
                 
         </div>
         

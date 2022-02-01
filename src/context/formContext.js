@@ -47,7 +47,10 @@ export const FormContextProvider = ({children}) => {
         const db = getFirestore()
         const orderCollection = collection(db, 'orders',  )
         await addDoc(orderCollection,order)
-        .then(resp => setdataId(resp.id))
+        .then(resp => {
+            setdataId(resp.id)
+            console.log(resp.id)
+        })
         .catch(err => err)
         .finally(() => console.log("Compra realizada"))
         
