@@ -6,8 +6,14 @@ import CartListDetailWithoutX from '../../Cart/CartListDetailWithoutX/CartListDe
 import './FinalBill.css'
 const FinalBill = () => {
     const {vaciarCarrito} = useCartContext()    
-    const {dataForm, dataId } = useFormContext()
-  return (
+    const {dataForm, dataId ,setdataForm, initialForm } = useFormContext()
+  
+    function handleResetPetition() {
+      vaciarCarrito() 
+      setdataForm(initialForm)
+    }
+  
+    return (
   <div>
             <h1>Su compra ha sido realizada con éxito</h1>
             <h2 className="container">Resumen de tu Compra</h2>
@@ -28,7 +34,7 @@ const FinalBill = () => {
         
         <div className="btn-form">
           <Link to="/">
-          <button onClick={vaciarCarrito}>Volver al Inicio</button>
+          <button onClick={handleResetPetition}>Volver al Inicio</button>
           </Link>
         </div>
 

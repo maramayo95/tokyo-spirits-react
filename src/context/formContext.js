@@ -15,22 +15,31 @@ export const FormContextProvider = ({children}) => {
 
     const {cartList , total} = useCartContext()
 
-    const [dataForm, setdataForm] = useState({
+    const initialForm = {
         name: '' , 
         subname: '',
         email: '',
         phone: '',
-        comment: ''
-      });
+        comment: '',
+        confirmPhone: '',
+        confirmEmail: ''
+    }
+
+    const [dataForm, setdataForm] = useState(initialForm);
       
-    
+    // console.log(dataForm)
 
       const [dataId, setdataId] = useState('');
 
+      const [error, setError] = useState({
+          bool: false,
+          text: null
+      });
+
     
-    const checkout =  (e) => {
+    const checkout =  () => {
+         
         
-        e.preventDefault()
         let order = {}
         order.buyer = dataForm
         order.total = total()
@@ -44,22 +53,43 @@ export const FormContextProvider = ({children}) => {
             return {id, name, price, cantidad}
         } )
     
-        const db = getFirestore()
-        const orderCollection = collection(db, 'orders' )
-        addDoc(orderCollection,order)
-         .then(resp => { setdataId(resp.id)})
-        .catch(err => err)
-        .finally(() => dataId)
-        
-        fRefreshStock();
-    }
+        if(dataValidate.includes('')) {
+            setError({
+                bool: true,
+                text: 'Complete los campos faltantes'
+            })}
+        else if ( dataForm.email !== dataForm.confirmEmail) {
+            setError({
+                bool: true,
+                text: 'Deben coincidir los campos'
+            })
+
+        } else if ( dataForm.email.includes(',')) {
+            setError({
+                bool: true,
+                text: 'Un email no debe contener "," '
+            })
+        } else {
+            const db = getFirestore()
+            const orderCollection = collection(db, 'orders' )
+            addDoc(orderCollection,order)
+            .then(resp =>  setdataId(resp.id))
+            .catch(err => err)
+            .finally(() => dataId)
+            
+            fRefreshStock();
+            
       
+        }
+
+    }
+    
     const fRefreshStock = async () => {
-      const db = getFirestore();
-      const collectionStock = collection(db,'items')
-         const queryStockRefresh = query(
+        const db = getFirestore();
+        const collectionStock = collection(db,'items')
+        const queryStockRefresh = query(
              collectionStock, where(documentId(), 'in', cartList.map(it=> it.id))
-         )
+             )
     
           const batch = writeBatch(db)
           
@@ -75,26 +105,28 @@ export const FormContextProvider = ({children}) => {
     
     }    
 
-    
-    
     function handleChange(e) {
-      setdataForm({
-        ...dataForm,
-        [e.target.name]:e.target.value
-    
-      }
-        )
-     }
+        setdataForm({
+          ...dataForm,
+          [e.target.name]:e.target.value
+      
+        }
+          )
+       }
+ 
 
+     const dataValidate = [ dataForm.name , dataForm.subname, dataForm.email, dataForm.phone, dataForm.comment , dataForm.confirmEmail , dataForm.confirmPhone  ] 
     
     return (
         <FormContext.Provider value={
             {
+                error,
                 dataForm,
                 dataId,
-                handleChange,
+                handleChange ,            
                 checkout,
-               
+                dataValidate,
+                setError
 
             }
         }>
