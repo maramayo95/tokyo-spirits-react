@@ -1,0 +1,17 @@
+.form-container {
+    display:flex;
+    flex-direction: column;
+    color: #fff;
+}
+
+.input-field {
+    display:flex;
+    flex-direction: column;
+    max-width: 500px;
+    padding: 5px;
+}
+
+.form-container button {
+    width: 200px;
+}
+

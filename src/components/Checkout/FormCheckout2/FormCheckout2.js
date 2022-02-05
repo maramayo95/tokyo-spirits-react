@@ -1,25 +1,31 @@
-import React from 'react';
-import { Formik } from 'formik';
+import {useState} from 'react';
+import { Formik , Form , Field , ErrorMessage } from 'formik';
+import './FormCheckout2.css'
+
 
 const FormCheckout2 = () => {
     
-    
+    const [formSend, setformSend] = useState(false); 
   
     return (
   <div>
       <>
         <Formik
-          initialValues={{
+          initialValues={
+              {
               name: '',
               subName: '',
-              email: '', 
-              confirmEmail: '',
+              email: 'something@something.com', 
+              confirmEmail: 'something@something.com',
               phone: '', 
               confirmPhone: ''
+              }
 
-          }}
+             
+            }
 
-          validate={(valuesForm)=> {
+          validate ={(valuesForm)=> {
+              
               let formErrors = {};
             
               if(!valuesForm.name) {
@@ -29,12 +35,24 @@ const FormCheckout2 = () => {
               }
               
               if(!valuesForm.subName) {
-                formErrors.name = 'Por favor ingrese su apellido'
+                formErrors.subName = 'Por favor ingrese su apellido'
               } else if (!/^[A-Z]+$/i.test(valuesForm.name)) {
                 formErrors.subName = 'El apellido solo puede contener letras '
               }
 
-
+              if(!valuesForm.phone){
+                  formErrors.phone = 'Debes ingresar un numero de teléfono'
+              } else if (!/^[0-9]{4,10}$/.test(valuesForm.phone)) {
+                  formErrors.phone = 'El teléfono debe contener numeros'
+              }
+              
+              if(!valuesForm.confirmPhone){
+                  formErrors.confirmPhone = 'Debes reingresar el numero de teléfono'
+              } else if(valuesForm.confirmPhone != valuesForm.phone){
+                  formErrors.confirmPhone  = 'Los campos deben coincidir'
+              } else if (!/^[0-9]{4,10}$/.test(valuesForm.phone)) {
+                  formErrors.phone = 'El teléfono debe contener numeros'
+              }
 
 
               if(!valuesForm.email) {
@@ -43,109 +61,97 @@ const FormCheckout2 = () => {
                 formErrors.email = 'El correo solo puede contener letras, numeros, puntos , guiones y guion bajo  '
               }
 
-            if(!valuesForm.confirmEmail ){
-                formErrors.confirmEmail = 'Por favor reingrese su correo'
-            } else if (valuesForm.email != valuesForm.confirmEmail) {
+              if ( valuesForm.confirmEmail !== valuesForm.email ) {
+                 
                 formErrors.confirmEmail = 'Los campos deben coincidir'
-            } else if (!/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(valuesForm.confirmEmail)) {
+             } else if (!/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(valuesForm.confirmEmail)) {
                 formErrors.confirmEmail = 'El correo solo puede contener letras, numeros, puntos , guiones y guion bajo  '
-            }
+             }
 
               return formErrors;
           }}
 
-          onSubmit={ (valuesForm) => {
-              console.log('Enviado')
-              console.log(valuesForm)
+          onSubmit={ (valuesForm, {resetForm}) => {
+              console.log(valuesForm) //Se pueden usar para mandar a una base de datos o una api 
+                resetForm();
+                setformSend(true)
+                setTimeout(()=> setformSend(false),5000);
           }}
         >
-            {({handleSubmit, values , handleChange , handleBlur , errors})=> (
-                <form onSubmit={handleSubmit}>
-                    <div>
-                        <label htmlFor="name">Nombre</label>
-                        <input 
-                            type="text" 
-                            id="name" 
-                            name="name" 
-                            placeholder='Ingrese su nombre' 
-                            value={values.name} 
-                            onChange={handleChange}
-                            onBlur={handleBlur}
-                            />
-                            {errors.name && <div>{errors.name}</div>
-                            //hacer lo mismo con todos los campos 
-                            }
-                            
-                    </div>
-                    
-                    <div>
-                        <label htmlFor="subName">Apellido</label>
-                        <input 
-                            type="text" 
-                            id="subName" 
-                            name="subName" 
-                            placeholder='Ingrese su apellido' 
-                            value={values.subName} 
-                            onChange={handleChange}
-                            onBlur={handleBlur}
-                            />
-                    </div>
+            {({ errors })=> (
+                <Form >
+                    <section className="form-container">
+                        <div className="input-field">
+                            <label htmlFor="name">Nombre</label>
+                            <Field 
+                                type="text" 
+                                id="name" 
+                                name="name" 
+                                placeholder='Ingrese su nombre' 
+                                />
+                                <ErrorMessage name="name" component={()=> <div>{errors.name}</div>} />
+                        </div>
+                        
+                         <div className="input-field">
+                            <label htmlFor="subName">Apellido</label>
+                            <Field 
+                                type="text" 
+                                id="subName" 
+                                name="subName" 
+                                placeholder='Ingrese su apellido' 
+                                />
+                                <ErrorMessage name="subName" component={()=> <div>{errors.subName}</div>} />
 
-                    <div>
-                        <label htmlFor="email">Apellido</label>
-                        <input 
-                            type="email" 
-                            id="email" 
-                            name="email" 
-                            placeholder='Ingrese su email' 
-                            value={values.email} 
-                            onChange={handleChange}
-                            onBlur={handleBlur}
-                            />
-                    </div>
-                    
-                    <div>
-                        <label htmlFor="repeatEmail">Apellido</label>
-                        <input 
-                            type="email" 
-                            id="repeatEmail" 
-                            name="repeatEmail" 
-                            placeholder='Confirme su email' 
-                            value={values.confirmEmail} 
-                            onChange={handleChange}
-                            onBlur={handleBlur}
-                            />
-                    </div>
-                
-                    <div>
-                        <label htmlFor="phone">Telefono</label>
-                        <input 
-                            type="number" 
-                            id="phone" 
-                            name="phone" 
-                            placeholder='Ingrese su teléfono' 
-                            value={values.phone} 
-                            onChange={handleChange}
-                            onBlur={handleBlur}
-                            />
-                    </div>
-                    
-                    <div>
-                        <label htmlFor="confirmPhone">Telefono</label>
-                        <input 
-                            type="number" 
-                            id="confirmPhone" 
-                            name="confirmPhone" 
-                            placeholder='Confirme su teléfono' 
-                            value={values.confirmPhone} 
-                            onChange={handleChange}
-                            onBlur={handleBlur}
-                            />
-                    </div>
+                        </div>
 
-                    <button type="submit">Finalizar Compra</button>
+                        <div className="input-field">
+                            <label htmlFor="email">Email</label>
+                            <Field 
+                                type="email" 
+                                id="email" 
+                                name="email" 
+                                placeholder='Ingrese su email' 
+                                />
+                                <ErrorMessage name="email" component={()=> <div>{errors.email}</div>} />
+                        </div>
+                        
+                        <div className="input-field">
+                            <label htmlFor="repeatEmail">Repetir Email</label>
+                            <Field 
+                                type="email" 
+                                id="repeatEmail" 
+                                name="repeatEmail" 
+                                placeholder='Confirme su email' 
+                                />
+                                <ErrorMessage name="confirmEmail" component={()=> <div>{errors.confirmEmail}</div>} />
+                        </div>
+                    
+                        <div className="input-field">
+                            <label htmlFor="phone">Telefono</label>
+                            <Field 
+                                type="number" 
+                                id="phone" 
+                                name="phone" 
+                                placeholder='Ingrese su teléfono' 
+                                />
+                                <ErrorMessage name="number" component={()=> <div>{errors.number}</div>} />
+                        </div>
+                        
+                        <div className="input-field">
+                            <label htmlFor="confirmPhone">Telefono</label>
+                            <Field 
+                                type="number" 
+                                id="confirmPhone" 
+                                name="confirmPhone" 
+                                placeholder='Confirme su teléfono' 
+                                />
+                                <ErrorMessage name="confirmNumber" component={()=> <div>{errors.confirmNumber}</div>} />
+                        </div>
 
-                </form>
+                        <button type="submit">Finalizar Compra</button>
+                        { formSend && <p>Formulario enviado con éxito </p>}
+                    </section>
+                </Form>
             ) }
         </Formik>
       </>
