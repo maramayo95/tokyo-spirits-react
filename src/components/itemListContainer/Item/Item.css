@@ -39,6 +39,31 @@ h4 {
     
 }
 
+.stock {
+    background-color: rgb(0, 255, 21);
+    color: black;
+    font-weight: bold;
+    width:70px;
+    padding: 5px 10px;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.no-stocl {
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    width:70px;
+    padding: 5px 10px;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.div-stock {
+    display:flex;
+    justify-content: center;
+}
+
 @media (max-width:800px) {
     .btn-detalle{
         margin: none;

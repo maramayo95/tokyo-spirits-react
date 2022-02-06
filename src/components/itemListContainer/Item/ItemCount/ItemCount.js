@@ -7,7 +7,7 @@ const ItemCount = ({min, max, onAdd}) => {
     
     
     const [counter, setCounter] =  useState(min);   
-    const [stock , setStock]  = useState(9);
+    const [stock , setStock]  = useState(max);
     
     const Add = () => {
         (counter < max) && setCounter(counter +1) ;
@@ -17,12 +17,12 @@ const ItemCount = ({min, max, onAdd}) => {
 
     const onRest = () => {
        (counter > min ) &&  setCounter(counter -1) ;
-       (stock < 9) && setStock(stock + 1);
+       (stock < max) && setStock(stock + 1);
     }
 
     const resetear = () => {
         setCounter(min)
-        setStock(9)
+        setStock(max)
     }
     
     
