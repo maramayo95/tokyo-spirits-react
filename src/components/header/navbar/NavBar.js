@@ -34,11 +34,11 @@ const NavBar = () => {
         <NavDropdown.Item>Deportes</NavDropdown.Item>
         </LinkContainer>
 
-        <LinkContainer to="categoria/Norteamericanas">
+        <LinkContainer to="categoria/norteamericanas">
         <NavDropdown.Item>Norteamericanas</NavDropdown.Item>
         </LinkContainer>
         
-        <LinkContainer to="categoria/Romanticas">
+        <LinkContainer to="categoria/romanticas">
         <NavDropdown.Item>Romanticas</NavDropdown.Item>
         </LinkContainer>
 

@@ -3,7 +3,9 @@ import { useCartContext } from '../../context/cartContext';
 import CartEmpty from '../Cart/CartEmpty/CartEmpty';
 import CartListDetail from '../Cart/CartListDetail/CartListDetail';
 import './Checkout.css'
-import FormCheckout from './FormCheckout/FormCheckout';
+import FormCheckout2 from './FormCheckout2/FormCheckout2';
+
+
 const Checkout = () => {
   
   
@@ -21,7 +23,7 @@ const Checkout = () => {
         <section className="container formGrid">
           <div className="formCheckout"> 
           <p>Completa tus datos</p>
-          <FormCheckout />
+            <FormCheckout2/>
           </div>
       
           <div className="abstractCard">

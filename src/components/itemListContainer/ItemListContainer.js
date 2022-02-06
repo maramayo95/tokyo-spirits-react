@@ -16,7 +16,7 @@ const ItemListContainer = () => {
     const {idCategoria} = useParams()
 
     
-    // console.log(idCategoria)
+     
     
     useEffect(() => {
             if (idCategoria) {
@@ -38,7 +38,7 @@ const ItemListContainer = () => {
         
     }, [idCategoria])
 
-   // console.log(productos)
+    
     
     
     return (

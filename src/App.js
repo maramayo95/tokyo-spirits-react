@@ -9,7 +9,6 @@ import Cart from './components/Cart/Cart.js';
 import { CartContextProvider } from './context/cartContext.js';
 import { FormContextProvider } from './context/formContext.js';
 import Checkout from './components/Checkout/Checkout.js';
-import FinalBill from './components/Checkout/FinalBill/FinalBill.js';
 import FormCheckout2 from './components/Checkout/FormCheckout2/FormCheckout2.js';
 
 
@@ -17,7 +16,6 @@ function App() {
   return (
     <>
       <CartContextProvider>
-        <FormContextProvider>
           <BrowserRouter>
               <Header greeting="En este  sitio encontrarás muchas películas y series de Anime..." />
             <Routes>
@@ -26,11 +24,9 @@ function App() {
               <Route exact path='/detalle/:detalleId' element={<ItemDetailContainer/>}/> 
               <Route exact path='/cart' element={<Cart/>}/> 
               <Route exact path="/checkout" element={<Checkout/>} />
-              <Route exact path="/finalBill" element={<FinalBill/>} />
               <Route exact path="/formCheckout2" element={<FormCheckout2/>}/>
             </Routes>
           </BrowserRouter>
-        </FormContextProvider>
       </CartContextProvider>
     </>
   );
