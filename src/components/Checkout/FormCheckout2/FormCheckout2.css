@@ -15,3 +15,10 @@
     width: 200px;
 }
 
+.error-p {
+    color: rgb(236, 16, 16);
+}
+
+.p-success {
+    color: rgb(7, 201, 7);
+}

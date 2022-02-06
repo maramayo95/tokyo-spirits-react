@@ -144,7 +144,7 @@ const FormCheckout2 = () => {
                                 name="name" 
                                 placeholder='Ingrese su nombre' 
                                 />
-                                <ErrorMessage name="name" component={()=> <div>{errors.name}</div>} />
+                                <ErrorMessage  name="name" component={()=> <div className="error-p">{errors.name}</div>} />
                         </div>
                         
                          <div className="input-field">
@@ -155,7 +155,7 @@ const FormCheckout2 = () => {
                                 name="subName" 
                                 placeholder='Ingrese su apellido' 
                                 />
-                                <ErrorMessage name="subName" component={()=> <div>{errors.subName}</div>} />
+                                <ErrorMessage name="subName" component={()=> <div className="error-p">{errors.subName}</div>} />
 
                         </div>
 
@@ -167,7 +167,7 @@ const FormCheckout2 = () => {
                                 name="email" 
                                 placeholder='Ingrese su email' 
                                 />
-                                <ErrorMessage name="email" component={()=> <div>{errors.email}</div>} />
+                                <ErrorMessage className="error-p" name="email" component={()=> <div className="error-p">{errors.email}</div>} />
                         </div>
                         
                         <div className="input-field">
@@ -178,33 +178,33 @@ const FormCheckout2 = () => {
                                 name="confirmEmail" 
                                 placeholder='Confirme su email' 
                                 />
-                                <ErrorMessage name="confirmEmail" component={()=> <div>{errors.confirmEmail}</div>} />
+                                <ErrorMessage name="confirmEmail" component={()=> <div className="error-p">{errors.confirmEmail}</div>} />
                         </div>
                     
                         <div className="input-field">
                             <label htmlFor="phone">Telefono</label>
                             <Field 
-                                type="number" 
+                                type="text" 
                                 id="phone" 
                                 name="phone" 
-                                placeholder='Ingrese su teléfono' 
+                                placeholder='Ej: 1122334455'
                                 />
-                                <ErrorMessage name="phone" component={()=> <div>{errors.phone}</div>} />
+                                <ErrorMessage name="phone" component={()=> <div className="error-p">{errors.phone}</div>} />
                         </div>
                         
                         <div className="input-field">
                             <label htmlFor="confirmPhone">Telefono</label>
                             <Field 
-                                type="number" 
+                                type="text" 
                                 id="confirmPhone" 
                                 name="confirmPhone" 
-                                placeholder='Confirme su teléfono' 
+                                placeholder='Ej: 1122334455' 
                                 />
-                                <ErrorMessage name="confirmPhone" component={()=> <div>{errors.confirmPhone}</div>} />
+                                <ErrorMessage name="confirmPhone" component={()=> <div className="error-p">{errors.confirmPhone}</div>} />
                         </div>
 
                         <button type="submit">Finalizar Compra</button>
-                        { formSend && <p>Formulario enviado con éxito </p>}
+                        { formSend && <p className="p-success">Formulario enviado con éxito </p>}
                     </section>
                 </Form>
             ) }

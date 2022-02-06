@@ -1,6 +1,5 @@
 import {useState, useEffect} from 'react'
 import './ItemListContainer.css'
-import {getFetch} from '../../helpers/mock'
 import Spiner from '../Spinner/Spinner'
 import ItemList from './ItemList/ItemList'
 import { useParams } from 'react-router-dom'
