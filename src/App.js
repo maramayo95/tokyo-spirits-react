@@ -7,7 +7,6 @@ import './App.css';
 import ItemDetailContainer from './components/itemListContainer/ItemDetailContainer/ItemDetailContainer.js';
 import Cart from './components/Cart/Cart.js';
 import { CartContextProvider } from './context/cartContext.js';
-import { FormContextProvider } from './context/formContext.js';
 import Checkout from './components/Checkout/Checkout.js';
 import FormCheckout2 from './components/Checkout/FormCheckout2/FormCheckout2.js';
 
@@ -25,6 +24,7 @@ function App() {
               <Route exact path='/cart' element={<Cart/>}/> 
               <Route exact path="/checkout" element={<Checkout/>} />
               <Route exact path="/formCheckout2" element={<FormCheckout2/>}/>
+              
             </Routes>
           </BrowserRouter>
       </CartContextProvider>

@@ -7,8 +7,9 @@
 .input-field {
     display:flex;
     flex-direction: column;
-    max-width: 500px;
+    max-width: 45vw;
     padding: 5px;
+    margin-left:5px;
 }
 
 .form-container button {
@@ -19,6 +20,59 @@
     color: rgb(236, 16, 16);
 }
 
-.p-success {
+.h1-success {
     color: rgb(7, 201, 7);
+}
+
+.section-on {
+    display:block;
+}
+
+.section-off {
+    display: none;
+}
+
+.billSection {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.grid-formik {
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.grid-bill {
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+}
+.dataIdBill{
+    color: white;
+}
+
+.data-order-buyer {
+    padding:5px;
+    color: white;
+}
+
+@media (max-width:800px) {
+    
+    
+    
+    .information-id-container {
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin:auto;
+    }
+    
+  
+    .grid-bill {
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 }

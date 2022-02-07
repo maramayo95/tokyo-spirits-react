@@ -3,18 +3,21 @@ import { Formik , Form , Field , ErrorMessage } from 'formik';
 import './FormCheckout2.css'
 import { useCartContext } from '../../../context/cartContext';
 import { getFirestore, query, collection, getDocs , where, addDoc, documentId, writeBatch } from 'firebase/firestore'
+import { Link } from 'react-router-dom';
+import CartListDetail from '../../Cart/CartListDetail/CartListDetail';
+import CartListDetailWithoutX from '../../Cart/CartListDetailWithoutX/CartListDetailWithoutX'
 
 
 const FormCheckout2 = () => {
     
-    const {cartList, total}  = useCartContext();
+    const {cartList, total, vaciarCarrito}  = useCartContext();
     
     const [formSend, setformSend] = useState(false); 
     
     
     const [dataId, setdataId] = useState('');
     
-    console.log(dataId)
+    const [dataFormSend, setdataFormSend]  = useState({}) 
 
     const fRefreshStock = async () => {
       const db = getFirestore();
@@ -36,10 +39,19 @@ const FormCheckout2 = () => {
   
   
   }  
+
+ 
     
     return (
   <div>
       <>
+
+    <section className={ formSend === true ? "section-off" : "section-on"}>
+       <h1>Ya casi es tuyo</h1>
+       <p>Completa tus datos </p>
+
+       <div className="grid-formik">
+         
         <Formik
           initialValues={
               {
@@ -69,17 +81,17 @@ const FormCheckout2 = () => {
               }
 
               if(!valuesForm.phone){
-                  formErrors.phone = 'Debes ingresar un numero de teléfono'
+                  formErrors.phone = 'Debes ingresar un numero de teléfono celular'
               } else if (!/^[0-9]{4,10}$/.test(valuesForm.phone)) {
-                  formErrors.phone = 'El teléfono debe contener numeros'
+                  formErrors.phone = 'El teléfono debe contener 10 numeros'
               } 
               
               if(!valuesForm.confirmPhone){
-                  formErrors.confirmPhone = 'Debes reingresar el numero de teléfono'
+                  formErrors.confirmPhone = 'Debes reingresar el numero de teléfono celular'
               } else if(valuesForm.confirmPhone != valuesForm.phone){
                   formErrors.confirmPhone  = 'Los campos deben coincidir'
               } else if (!/^[0-9]{4,10}$/.test(valuesForm.phone)) {
-                  formErrors.confirmPhone = 'El teléfono debe contener numeros'
+                  formErrors.confirmPhone = 'El teléfono debe contener 10 numeros'
               }
 
 
@@ -96,13 +108,11 @@ const FormCheckout2 = () => {
                 formErrors.confirmEmail = 'El correo solo puede contener letras, numeros, puntos , guiones y guion bajo  '
              }
 
+             
               return formErrors;
           }}
-
+       
           onSubmit={ (valuesForm, {resetForm}) => {
-              console.log(valuesForm) //Se pueden usar para mandar a una base de datos o una api 
-
-              
 
                 let order = {}
                 order.buyer = valuesForm
@@ -129,8 +139,9 @@ const FormCheckout2 = () => {
             resetForm();
  
             setformSend(true)
-            setTimeout(()=> setformSend(false),5000);
 
+            setdataFormSend(order.buyer)
+                
           }}
         >
             {({ errors })=> (
@@ -204,13 +215,63 @@ const FormCheckout2 = () => {
                         </div>
 
                         <button type="submit">Finalizar Compra</button>
-                        { formSend && <p className="p-success">Formulario enviado con éxito </p>}
+
                     </section>
                 </Form>
             ) }
         </Formik>
-      </>
+             
+        <div className="abstractCard">
+          <CartListDetail />
+            <div className="totalPriceCheckout"> 
+                <p>Total : ${total()}</p>
+              </div>  
+        </div>
 
+      </div>          
+      </section>
+
+
+       
+            
+          { formSend && 
+            <section className="billSection" >
+              <div className="information-id-container">
+                <h1 className="h1-success">La compra se ha realizado con éxito! </h1>
+                <h3 className="dataIdBill">Comprobante de Compra : {dataId}</h3>
+              </div>
+            
+            <div className="grid-bill">
+                
+                <div className="data-order-buyer">
+                  <h4>Sus datos</h4>
+                  <p>{dataFormSend.name}</p>
+                  <p>{dataFormSend.subName}</p>
+                  <p>{dataFormSend.phone}</p>
+                  <p>{dataFormSend.email}</p>
+                  <Link to="/"><button onClick={()=> vaciarCarrito()}>Volver al Inicio</button></Link>
+                </div>
+              
+              <div className="abstractCard">
+                <CartListDetailWithoutX />
+                <div className="totalPriceCheckout"> 
+                  <p>Total : ${total()}</p>
+                </div> 
+              </div>
+            </div>
+          
+
+           
+
+
+            </section>
+          
+          
+          }
+              
+              
+          
+      </>
   </div>);
 };
 
