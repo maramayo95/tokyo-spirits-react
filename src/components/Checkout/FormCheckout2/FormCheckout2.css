@@ -58,7 +58,10 @@
 
 @media (max-width:800px) {
     
-    
+    .input-field {
+        max-width: 90vw;
+        margin-left: 5px;
+    }
     
     .information-id-container {
         display:flex;
@@ -68,6 +71,10 @@
         margin:auto;
     }
     
+    .grid-formik{
+        display:flex;
+        flex-direction: column-reverse;
+    }
   
     .grid-bill {
         display:flex;
