@@ -3,7 +3,6 @@ import React from 'react'
 import { Navbar, Nav, NavDropdown  } from 'react-bootstrap';
 import CartWidget from './CartWidget.js'
 import './NavBar.css'
-
 import {LinkContainer} from 'react-router-bootstrap'
  
 const NavBar = () => {

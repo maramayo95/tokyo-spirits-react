@@ -83,7 +83,7 @@ const FormCheckout2 = () => {
               
               if(!valuesForm.confirmPhone){
                   formErrors.confirmPhone = 'Debes reingresar el numero de teléfono celular'
-              } else if(valuesForm.confirmPhone != valuesForm.phone){
+              } else if(valuesForm.confirmPhone !== valuesForm.phone){
                   formErrors.confirmPhone  = 'Los campos deben coincidir'
               } else if (!/^[0-9]{4,10}$/.test(valuesForm.phone)) {
                   formErrors.confirmPhone = 'El teléfono debe contener 10 numeros'
