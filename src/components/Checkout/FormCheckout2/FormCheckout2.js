@@ -19,6 +19,7 @@ const FormCheckout2 = () => {
     
     const [dataFormSend, setdataFormSend]  = useState({}) 
 
+
     const fRefreshStock = async () => {
       const db = getFirestore();
       const collectionStock = collection(db,'items')
@@ -34,14 +35,8 @@ const FormCheckout2 = () => {
         })
         ))
         .catch(err => console.log(err))
-        .finally(()=> console.log('stock actualizado'))
-        batch.commit()
-  
-  
+        .finally(()=> batch.commit())
   }  
-
- 
-    
     return (
   <div>
       <>
