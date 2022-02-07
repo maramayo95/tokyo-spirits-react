@@ -86,14 +86,23 @@ img {
     }
 
     .buttonCenter button {
-        margin-bottom: 10px;
-        width: 70vw;
+        margin-bottom: 20px;
+        width: 60vw;
     }
 
     .buy button {
-        width: 70vw;
+        width: 60vw;
+        margin-bottom: 10px;
     }
     
+    .divButtonsItemDetail{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+  
 }
 
 

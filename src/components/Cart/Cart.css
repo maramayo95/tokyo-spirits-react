@@ -68,4 +68,9 @@ p{
         justify-content: center;
         align-items: center;
     }
+
+    .totalPrice p {
+        margin-right: 10px;
+    }
+
 }

@@ -22,6 +22,7 @@
 
 .h1-success {
     color: rgb(7, 201, 7);
+   
 }
 
 .section-on {
@@ -57,10 +58,13 @@
 }
 
 @media (max-width:800px) {
-    
+    .h1-success {
+        text-align:center;
+    }
     .input-field {
         max-width: 90vw;
         margin-left: 5px;
+        
     }
     
     .information-id-container {
@@ -81,5 +85,21 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+    }
+
+    .data-order-buyer{
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .data-order-buyer button {
+        width: 90vw; 
+    }
+
+    .form-container button {
+       margin-top: 10px;
+        width: 90vw;
     }
 }

@@ -52,9 +52,9 @@ const ItemDetail = ({producto}) => {
             </div>
             
             : 
-            <div>
-                <Link  to="/cart"><button>Ir al Carrito</button></Link>
-                <Link to="/"><button>Seguir Comprando</button></Link>
+                <div className="divButtonsItemDetail">
+                    <Link  to="/cart"><button>Ir al Carrito</button></Link>
+                    <Link to="/"><button>Seguir Comprando</button></Link>
                 </div> }
                 
         
